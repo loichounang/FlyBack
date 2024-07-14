@@ -8450,3 +8450,1487 @@ ALTER TABLE "teams_team_members" ADD CONSTRAINT "teams_team_members_user_id_d2b5
 CREATE INDEX "teams_team_members_team_id_ebb2d47d" ON "teams_team_members" ("team_id"); (params None)
 CREATE INDEX "teams_team_members_user_id_d2b52fb4" ON "teams_team_members" ("user_id"); (params None)
 Bad Request: /accounts/users/
+Bad Request: /accounts/api-token-auth/
+"POST /accounts/api-token-auth/ HTTP/1.1" 400 69
+File C:\Users\AKC SOFT\Desktop\Flypol\FlyBack\flyacademy\env\Lib\site-packages\django\contrib\messages\storage\session.py first seen with mtime 1720911770.9686587
+File C:\Users\AKC SOFT\Desktop\Flypol\FlyBack\flyacademy\env\Lib\site-packages\django\contrib\messages\storage\cookie.py first seen with mtime 1720911770.9585426
+File C:\Users\AKC SOFT\Desktop\Flypol\FlyBack\flyacademy\env\Lib\site-packages\django\contrib\messages\storage\fallback.py first seen with mtime 1720911770.9666142
+File C:\Users\AKC SOFT\Desktop\Flypol\FlyBack\flyacademy\env\Lib\site-packages\django\contrib\sessions\serializers.py first seen with mtime 1720911772.4058547
+Method Not Allowed: /accounts/api-token-auth/
+"GET /accounts/api-token-auth/ HTTP/1.1" 405 40
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\urls\resolvers.py", line 725, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/$' [name='user-list']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users\.(?P<format>[a-z0-9]+)/?$' [name='user-list']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/(?P<pk>[^/.]+)/$' [name='user-detail']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/(?P<pk>[^/.]+)\.(?P<format>[a-z0-9]+)/?$' [name='user-detail']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '' [name='api-root']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '<drf_format_suffix:format>' [name='api-root']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLPattern 'api-token-auth/' [name='api_token_auth']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLPattern 'api-token-logout/' [name='api_token_logout']>], [<URLResolver <module 'teams.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\teams\\urls.py'> (None:None) 'teams/'>]], 'path': 'accounts/sqdqhk'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\urls\resolvers.py", line 725, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/$' [name='user-list']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users\.(?P<format>[a-z0-9]+)/?$' [name='user-list']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/(?P<pk>[^/.]+)/$' [name='user-detail']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/(?P<pk>[^/.]+)\.(?P<format>[a-z0-9]+)/?$' [name='user-detail']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '' [name='api-root']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '<drf_format_suffix:format>' [name='api-root']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLPattern 'api-token-auth/' [name='api_token_auth']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLPattern 'api-token-logout/' [name='api_token_logout']>], [<URLResolver <module 'teams.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\teams\\urls.py'> (None:None) 'teams/'>]], 'path': 'accounts/sqdqhk'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'teams.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\teams\\urls.py'> (None:None) 'teams/'>
+Not Found: /accounts/sqdqhk
+"GET /accounts/sqdqhk HTTP/1.1" 404 4118
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\urls\resolvers.py", line 725, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/$' [name='user-list']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users\.(?P<format>[a-z0-9]+)/?$' [name='user-list']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/(?P<pk>[^/.]+)/$' [name='user-detail']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/(?P<pk>[^/.]+)\.(?P<format>[a-z0-9]+)/?$' [name='user-detail']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '' [name='api-root']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '<drf_format_suffix:format>' [name='api-root']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLPattern 'api-token-auth/' [name='api_token_auth']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLPattern 'api-token-logout/' [name='api_token_logout']>], [<URLResolver <module 'teams.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\teams\\urls.py'> (None:None) 'teams/'>]], 'path': 'accounts/sqdqhk'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\urls\resolvers.py", line 725, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/$' [name='user-list']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users\.(?P<format>[a-z0-9]+)/?$' [name='user-list']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/(?P<pk>[^/.]+)/$' [name='user-detail']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/(?P<pk>[^/.]+)\.(?P<format>[a-z0-9]+)/?$' [name='user-detail']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '' [name='api-root']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '<drf_format_suffix:format>' [name='api-root']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLPattern 'api-token-auth/' [name='api_token_auth']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLPattern 'api-token-logout/' [name='api_token_logout']>], [<URLResolver <module 'teams.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\teams\\urls.py'> (None:None) 'teams/'>]], 'path': 'accounts/sqdqhk'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'teams.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\teams\\urls.py'> (None:None) 'teams/'>
+Not Found: /accounts/sqdqhk
+"GET /accounts/sqdqhk HTTP/1.1" 404 4118
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\urls\resolvers.py", line 725, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/$' [name='user-list']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users\.(?P<format>[a-z0-9]+)/?$' [name='user-list']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/(?P<pk>[^/.]+)/$' [name='user-detail']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/(?P<pk>[^/.]+)\.(?P<format>[a-z0-9]+)/?$' [name='user-detail']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '' [name='api-root']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '<drf_format_suffix:format>' [name='api-root']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLPattern 'api-token-auth/' [name='api_token_auth']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLPattern 'api-token-logout/' [name='api_token_logout']>], [<URLResolver <module 'teams.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\teams\\urls.py'> (None:None) 'teams/'>]], 'path': 'accounts/users'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\urls\resolvers.py", line 725, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/$' [name='user-list']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users\.(?P<format>[a-z0-9]+)/?$' [name='user-list']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/(?P<pk>[^/.]+)/$' [name='user-detail']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/(?P<pk>[^/.]+)\.(?P<format>[a-z0-9]+)/?$' [name='user-detail']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '' [name='api-root']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '<drf_format_suffix:format>' [name='api-root']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLPattern 'api-token-auth/' [name='api_token_auth']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLPattern 'api-token-logout/' [name='api_token_logout']>], [<URLResolver <module 'teams.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\teams\\urls.py'> (None:None) 'teams/'>]], 'path': 'accounts/users'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'teams.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\teams\\urls.py'> (None:None) 'teams/'>
+"GET /accounts/users HTTP/1.1" 301 0
+(0.000) SELECT "accounts_user"."id", "accounts_user"."password", "accounts_user"."last_login", "accounts_user"."is_superuser", "accounts_user"."username", "accounts_user"."first_name", "accounts_user"."last_name", "accounts_user"."email", "accounts_user"."is_staff", "accounts_user"."is_active", "accounts_user"."date_joined", "accounts_user"."role" FROM "accounts_user"; args=(); alias=default
+Exception while resolving variable 'hide_label' in template 'rest_framework/horizontal/input.html'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+KeyError: 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [hide_label] in {'base_template': 'input.html', 'input_type': 'text', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x000001A9DECCFCB0>}
+Exception while resolving variable 'placeholder' in template 'rest_framework/horizontal/input.html'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+KeyError: 'placeholder'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'placeholder'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'placeholder'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [placeholder] in {'base_template': 'input.html', 'input_type': 'text', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x000001A9DECCFCB0>}
+Exception while resolving variable 'autofocus' in template 'rest_framework/horizontal/input.html'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+KeyError: 'autofocus'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'autofocus'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'autofocus'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [autofocus] in {'base_template': 'input.html', 'input_type': 'text', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x000001A9DECCFCB0>}
+Exception while resolving variable 'hide_label' in template 'rest_framework/horizontal/input.html'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+KeyError: 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [hide_label] in {'base_template': 'input.html', 'input_type': 'email', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x000001A9DECCFCB0>}
+Exception while resolving variable 'placeholder' in template 'rest_framework/horizontal/input.html'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+KeyError: 'placeholder'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'placeholder'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'placeholder'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [placeholder] in {'base_template': 'input.html', 'input_type': 'email', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x000001A9DECCFCB0>}
+Exception while resolving variable 'autofocus' in template 'rest_framework/horizontal/input.html'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+KeyError: 'autofocus'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'autofocus'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'autofocus'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [autofocus] in {'base_template': 'input.html', 'input_type': 'email', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x000001A9DECCFCB0>}
+Exception while resolving variable 'hide_label' in template 'rest_framework/horizontal/select.html'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+KeyError: 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [hide_label] in {'base_template': 'select.html', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x000001A9DECCFCB0>}
+"GET /accounts/users/ HTTP/1.1" 200 9759
+File C:\Users\AKC SOFT\Desktop\Flypol\FlyBack\flyacademy\env\Lib\site-packages\django\conf\locale\en\formats.py first seen with mtime 1720911763.703302
+File C:\Users\AKC SOFT\Desktop\Flypol\FlyBack\flyacademy\env\Lib\site-packages\django\template\context_processors.py first seen with mtime 1720911775.5007699
+File C:\Users\AKC SOFT\Desktop\Flypol\FlyBack\flyacademy\env\Lib\site-packages\django\conf\locale\en\__init__.py first seen with mtime 1720911763.6952538
+File C:\Users\AKC SOFT\Desktop\Flypol\FlyBack\flyacademy\env\Lib\site-packages\django\contrib\messages\context_processors.py first seen with mtime 1720911770.9463093
+File C:\Users\AKC SOFT\Desktop\Flypol\FlyBack\flyacademy\env\Lib\site-packages\django\contrib\auth\context_processors.py first seen with mtime 1720911766.475083
+File C:\Users\AKC SOFT\Desktop\Flypol\FlyBack\flyacademy\env\Lib\site-packages\django\contrib\staticfiles\storage.py first seen with mtime 1720911774.4161577
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\urls\resolvers.py", line 725, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/$' [name='user-list']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users\.(?P<format>[a-z0-9]+)/?$' [name='user-list']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/(?P<pk>[^/.]+)/$' [name='user-detail']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/(?P<pk>[^/.]+)\.(?P<format>[a-z0-9]+)/?$' [name='user-detail']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '' [name='api-root']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '<drf_format_suffix:format>' [name='api-root']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLPattern 'api-token-auth/' [name='api_token_auth']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLPattern 'api-token-logout/' [name='api_token_logout']>], [<URLResolver <module 'teams.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\teams\\urls.py'> (None:None) 'teams/'>]], 'path': 'accounts/api-token-auth/ Content-Type: application/json { "username": "admin", "password": "admin", }/'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\urls\resolvers.py", line 725, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/$' [name='user-list']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users\.(?P<format>[a-z0-9]+)/?$' [name='user-list']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/(?P<pk>[^/.]+)/$' [name='user-detail']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/(?P<pk>[^/.]+)\.(?P<format>[a-z0-9]+)/?$' [name='user-detail']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '' [name='api-root']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '<drf_format_suffix:format>' [name='api-root']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLPattern 'api-token-auth/' [name='api_token_auth']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLPattern 'api-token-logout/' [name='api_token_logout']>], [<URLResolver <module 'teams.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\teams\\urls.py'> (None:None) 'teams/'>]], 'path': 'accounts/api-token-auth/ Content-Type: application/json { "username": "admin", "password": "admin", }/'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'teams.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\teams\\urls.py'> (None:None) 'teams/'>
+Not Found: /accounts/api-token-auth/ Content-Type: application/json { "username": "admin", "password": "admin", }/
+"GET /accounts/api-token-auth/%20Content-Type:%20application/json%20%7B%20%22username%22:%20%22admin%22,%20%22password%22:%20%22admin%22,%20%7D/ HTTP/1.1" 404 4495
+Method Not Allowed: /accounts/api-token-auth/
+"GET /accounts/api-token-auth/ HTTP/1.1" 405 40
+Forbidden: /accounts/
+"GET /accounts/ HTTP/1.1" 403 4908
+(0.000) SELECT "accounts_user"."id", "accounts_user"."password", "accounts_user"."last_login", "accounts_user"."is_superuser", "accounts_user"."username", "accounts_user"."first_name", "accounts_user"."last_name", "accounts_user"."email", "accounts_user"."is_staff", "accounts_user"."is_active", "accounts_user"."date_joined", "accounts_user"."role" FROM "accounts_user"; args=(); alias=default
+Exception while resolving variable 'hide_label' in template 'rest_framework/horizontal/input.html'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+KeyError: 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [hide_label] in {'base_template': 'input.html', 'input_type': 'text', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x000001A9DECCC0B0>}
+Exception while resolving variable 'placeholder' in template 'rest_framework/horizontal/input.html'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+KeyError: 'placeholder'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'placeholder'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'placeholder'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [placeholder] in {'base_template': 'input.html', 'input_type': 'text', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x000001A9DECCC0B0>}
+Exception while resolving variable 'autofocus' in template 'rest_framework/horizontal/input.html'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+KeyError: 'autofocus'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'autofocus'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'autofocus'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [autofocus] in {'base_template': 'input.html', 'input_type': 'text', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x000001A9DECCC0B0>}
+Exception while resolving variable 'hide_label' in template 'rest_framework/horizontal/input.html'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+KeyError: 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [hide_label] in {'base_template': 'input.html', 'input_type': 'email', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x000001A9DECCC0B0>}
+Exception while resolving variable 'placeholder' in template 'rest_framework/horizontal/input.html'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+KeyError: 'placeholder'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'placeholder'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'placeholder'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [placeholder] in {'base_template': 'input.html', 'input_type': 'email', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x000001A9DECCC0B0>}
+Exception while resolving variable 'autofocus' in template 'rest_framework/horizontal/input.html'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+KeyError: 'autofocus'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'autofocus'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'autofocus'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [autofocus] in {'base_template': 'input.html', 'input_type': 'email', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x000001A9DECCC0B0>}
+Exception while resolving variable 'hide_label' in template 'rest_framework/horizontal/select.html'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+KeyError: 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [hide_label] in {'base_template': 'select.html', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x000001A9DECCC0B0>}
+"GET /accounts/users/ HTTP/1.1" 200 9759
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\urls\resolvers.py", line 725, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/$' [name='user-list']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users\.(?P<format>[a-z0-9]+)/?$' [name='user-list']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/(?P<pk>[^/.]+)/$' [name='user-detail']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/(?P<pk>[^/.]+)\.(?P<format>[a-z0-9]+)/?$' [name='user-detail']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '' [name='api-root']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '<drf_format_suffix:format>' [name='api-root']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLPattern 'api-token-auth/' [name='api_token_auth']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLPattern 'api-token-logout/' [name='api_token_logout']>], [<URLResolver <module 'teams.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\teams\\urls.py'> (None:None) 'teams/'>]], 'path': 'accounts/users/1'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\urls\resolvers.py", line 725, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/$' [name='user-list']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users\.(?P<format>[a-z0-9]+)/?$' [name='user-list']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/(?P<pk>[^/.]+)/$' [name='user-detail']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/(?P<pk>[^/.]+)\.(?P<format>[a-z0-9]+)/?$' [name='user-detail']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '' [name='api-root']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '<drf_format_suffix:format>' [name='api-root']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLPattern 'api-token-auth/' [name='api_token_auth']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLPattern 'api-token-logout/' [name='api_token_logout']>], [<URLResolver <module 'teams.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\teams\\urls.py'> (None:None) 'teams/'>]], 'path': 'accounts/users/1'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'teams.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\teams\\urls.py'> (None:None) 'teams/'>
+"GET /accounts/users/1 HTTP/1.1" 301 0
+(0.000) SELECT "accounts_user"."id", "accounts_user"."password", "accounts_user"."last_login", "accounts_user"."is_superuser", "accounts_user"."username", "accounts_user"."first_name", "accounts_user"."last_name", "accounts_user"."email", "accounts_user"."is_staff", "accounts_user"."is_active", "accounts_user"."date_joined", "accounts_user"."role" FROM "accounts_user" WHERE "accounts_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+Exception while resolving variable 'hide_label' in template 'rest_framework/horizontal/input.html'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+KeyError: 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [hide_label] in {'base_template': 'input.html', 'input_type': 'text', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x000001A9DEE5A3C0>}
+Exception while resolving variable 'placeholder' in template 'rest_framework/horizontal/input.html'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+KeyError: 'placeholder'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'placeholder'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'placeholder'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [placeholder] in {'base_template': 'input.html', 'input_type': 'text', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x000001A9DEE5A3C0>}
+Exception while resolving variable 'autofocus' in template 'rest_framework/horizontal/input.html'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+KeyError: 'autofocus'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'autofocus'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'autofocus'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [autofocus] in {'base_template': 'input.html', 'input_type': 'text', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x000001A9DEE5A3C0>}
+Exception while resolving variable 'hide_label' in template 'rest_framework/horizontal/input.html'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+KeyError: 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [hide_label] in {'base_template': 'input.html', 'input_type': 'email', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x000001A9DEE5A3C0>}
+Exception while resolving variable 'placeholder' in template 'rest_framework/horizontal/input.html'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+KeyError: 'placeholder'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'placeholder'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'placeholder'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [placeholder] in {'base_template': 'input.html', 'input_type': 'email', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x000001A9DEE5A3C0>}
+Exception while resolving variable 'autofocus' in template 'rest_framework/horizontal/input.html'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+KeyError: 'autofocus'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'autofocus'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'autofocus'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [autofocus] in {'base_template': 'input.html', 'input_type': 'email', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x000001A9DEE5A3C0>}
+Exception while resolving variable 'hide_label' in template 'rest_framework/horizontal/select.html'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+KeyError: 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [hide_label] in {'base_template': 'select.html', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x000001A9DEE5A3C0>}
+Not Found: /accounts/users/1/
+"GET /accounts/users/1/ HTTP/1.1" 404 10899
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\urls\resolvers.py", line 725, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/$' [name='user-list']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users\.(?P<format>[a-z0-9]+)/?$' [name='user-list']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/(?P<pk>[^/.]+)/$' [name='user-detail']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/(?P<pk>[^/.]+)\.(?P<format>[a-z0-9]+)/?$' [name='user-detail']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '' [name='api-root']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '<drf_format_suffix:format>' [name='api-root']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLPattern 'api-token-auth/' [name='api_token_auth']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLPattern 'api-token-logout/' [name='api_token_logout']>], [<URLResolver <module 'teams.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\teams\\urls.py'> (None:None) 'teams/'>]], 'path': 'accounts/users/5'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\urls\resolvers.py", line 725, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/$' [name='user-list']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users\.(?P<format>[a-z0-9]+)/?$' [name='user-list']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/(?P<pk>[^/.]+)/$' [name='user-detail']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^users/(?P<pk>[^/.]+)\.(?P<format>[a-z0-9]+)/?$' [name='user-detail']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '' [name='api-root']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '<drf_format_suffix:format>' [name='api-root']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLPattern 'api-token-auth/' [name='api_token_auth']>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>, <URLPattern 'api-token-logout/' [name='api_token_logout']>], [<URLResolver <module 'teams.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\teams\\urls.py'> (None:None) 'teams/'>]], 'path': 'accounts/users/5'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'teams.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\teams\\urls.py'> (None:None) 'teams/'>
+"GET /accounts/users/5 HTTP/1.1" 301 0
+(0.000) SELECT "accounts_user"."id", "accounts_user"."password", "accounts_user"."last_login", "accounts_user"."is_superuser", "accounts_user"."username", "accounts_user"."first_name", "accounts_user"."last_name", "accounts_user"."email", "accounts_user"."is_staff", "accounts_user"."is_active", "accounts_user"."date_joined", "accounts_user"."role" FROM "accounts_user" WHERE "accounts_user"."id" = 5 LIMIT 21; args=(5,); alias=default
+Exception while resolving variable 'hide_label' in template 'rest_framework/horizontal/input.html'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+KeyError: 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [hide_label] in {'base_template': 'input.html', 'input_type': 'text', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x000001A9DECCF320>}
+Exception while resolving variable 'placeholder' in template 'rest_framework/horizontal/input.html'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+KeyError: 'placeholder'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'placeholder'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'placeholder'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [placeholder] in {'base_template': 'input.html', 'input_type': 'text', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x000001A9DECCF320>}
+Exception while resolving variable 'autofocus' in template 'rest_framework/horizontal/input.html'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+KeyError: 'autofocus'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'autofocus'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'autofocus'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [autofocus] in {'base_template': 'input.html', 'input_type': 'text', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x000001A9DECCF320>}
+Exception while resolving variable 'hide_label' in template 'rest_framework/horizontal/input.html'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+KeyError: 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [hide_label] in {'base_template': 'input.html', 'input_type': 'email', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x000001A9DECCF320>}
+Exception while resolving variable 'placeholder' in template 'rest_framework/horizontal/input.html'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+KeyError: 'placeholder'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'placeholder'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'placeholder'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [placeholder] in {'base_template': 'input.html', 'input_type': 'email', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x000001A9DECCF320>}
+Exception while resolving variable 'autofocus' in template 'rest_framework/horizontal/input.html'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+KeyError: 'autofocus'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'autofocus'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'autofocus'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [autofocus] in {'base_template': 'input.html', 'input_type': 'email', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x000001A9DECCF320>}
+Exception while resolving variable 'hide_label' in template 'rest_framework/horizontal/select.html'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+KeyError: 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'hide_label'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [hide_label] in {'base_template': 'select.html', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x000001A9DECCF320>}
+Not Found: /accounts/users/5/
+"GET /accounts/users/5/ HTTP/1.1" 404 10899
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\urls\resolvers.py", line 725, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>], [<URLResolver <module 'teams.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\teams\\urls.py'> (None:None) 'teams/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^teams/$' [name='team-list']>], [<URLResolver <module 'teams.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\teams\\urls.py'> (None:None) 'teams/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^teams\.(?P<format>[a-z0-9]+)/?$' [name='team-list']>], [<URLResolver <module 'teams.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\teams\\urls.py'> (None:None) 'teams/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^teams/(?P<pk>[^/.]+)/$' [name='team-detail']>], [<URLResolver <module 'teams.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\teams\\urls.py'> (None:None) 'teams/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^teams/(?P<pk>[^/.]+)\.(?P<format>[a-z0-9]+)/?$' [name='team-detail']>], [<URLResolver <module 'teams.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\teams\\urls.py'> (None:None) 'teams/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '' [name='api-root']>], [<URLResolver <module 'teams.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\teams\\urls.py'> (None:None) 'teams/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '<drf_format_suffix:format>' [name='api-root']>]], 'path': 'teams/teams'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\urls\resolvers.py", line 725, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>], [<URLResolver <module 'teams.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\teams\\urls.py'> (None:None) 'teams/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^teams/$' [name='team-list']>], [<URLResolver <module 'teams.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\teams\\urls.py'> (None:None) 'teams/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^teams\.(?P<format>[a-z0-9]+)/?$' [name='team-list']>], [<URLResolver <module 'teams.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\teams\\urls.py'> (None:None) 'teams/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^teams/(?P<pk>[^/.]+)/$' [name='team-detail']>], [<URLResolver <module 'teams.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\teams\\urls.py'> (None:None) 'teams/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '^teams/(?P<pk>[^/.]+)\.(?P<format>[a-z0-9]+)/?$' [name='team-detail']>], [<URLResolver <module 'teams.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\teams\\urls.py'> (None:None) 'teams/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '' [name='api-root']>], [<URLResolver <module 'teams.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\teams\\urls.py'> (None:None) 'teams/'>, <URLResolver <URLPattern list> (None:None) ''>, <URLPattern '<drf_format_suffix:format>' [name='api-root']>]], 'path': 'teams/teams'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AKC SOFT\Desktop\Flypol\Flyback\flyacademy\env\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'accounts.urls' from 'C:\\Users\\AKC SOFT\\Desktop\\Flypol\\Flyback\\flyacademy\\accounts\\urls.py'> (None:None) 'accounts/'>
+"GET /teams/teams HTTP/1.1" 301 0
+Forbidden: /teams/teams/
+"GET /teams/teams/ HTTP/1.1" 403 5034
+Forbidden: /teams/
+"GET /teams/ HTTP/1.1" 403 4893
