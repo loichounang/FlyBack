@@ -1,0 +1,73 @@
+### Users Endpoints ###
+
+# Login endpoint
+POST http://localhost:8000/accounts/api-token-auth/
+Content-Type: application/json
+{
+    "username": "admin",
+    "password": "admin",
+}
+
+
+# GET all users
+GET http://localhost:8000/accounts/users/
+
+# GET a specific user by ID
+GET http://localhost:8000/accounts/users/1/
+
+# POST create a new user
+POST http://localhost:8000/accounts/users/
+Content-Type: application/json
+
+{
+    "username": "newuser",
+    "email": "newuser@example.com",
+    "role": "ambassador"
+}
+
+# PUT update an existing user
+PUT http://localhost:8000/accounts/users/1/
+Content-Type: application/json
+
+{
+    "username": "updateduser",
+    "email": "updateduser@example.com",
+    "role": "team_leader"
+}
+
+# DELETE a user
+DELETE http://localhost:8000/accounts/users/1/
+
+
+### Teams Endpoints ###
+
+# GET all teams
+GET http://localhost:8000/teams/teams/
+
+# GET a specific team by ID
+GET http://localhost:8000/teams/teams/1/
+
+# POST create a new team
+POST http://localhost:8000/teams/teams/
+Content-Type: application/json
+
+{
+    "name": "New Team",
+    "team_leader": 1,
+    "ambassadors": [1, 2],
+    "members": [3, 4]
+}
+
+# PUT update an existing team
+PUT http://localhost:8000/teams/teams/1/
+Content-Type: application/json
+
+{
+    "name": "Updated Team",
+    "team_leader": 2,
+    "ambassadors": [2, 3],
+    "members": [4, 5]
+}
+
+# DELETE a team
+DELETE http://localhost:8000/teams/teams/1/
