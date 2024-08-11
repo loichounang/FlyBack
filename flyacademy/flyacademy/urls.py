@@ -20,6 +20,10 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/utilisateurs/', include('utilisateurs.urls')),
+    path('api/cours/', include('cours.urls')),
+    #path('api/equipes/', include('equipes.urls')),
+    path('api/forum/', include('forum.urls')),
+    path('api/messagerie/', include('messagerie.urls')),
     path('accounts/', include('allauth.urls')),  # Ajoutez cette ligne pour les URLs d'authentification
     # Ajoutez ici les autres routes des applications
 ]

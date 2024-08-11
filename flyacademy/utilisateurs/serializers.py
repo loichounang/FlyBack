@@ -9,7 +9,7 @@ class UtilisateurSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Administrateur  # Utilisez le modèle de base ici si vous souhaitez un serializer général
-        fields = ['email', 'nom', 'prénom', 'password', 'dernier_accès', 'statut']
+        fields = ['email', 'nom', 'prénom', 'password', 'dernier_accès', 'statut', 'username']
 
     def create(self, validated_data):
         password = validated_data.pop('password')
