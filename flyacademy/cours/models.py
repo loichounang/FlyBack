@@ -33,7 +33,7 @@ class Leçon(models.Model):
     image = models.ImageField(upload_to='leçons/images/', null=True, blank=True)
     lien_video = models.URLField(null=True, blank=True)
     fichier_détails = models.FileField(upload_to='leçons/fichiers/', null=True, blank=True)
-    chapitre = models.ForeignKey(Chapitre, on_delete=models.CASCADE)
+    chapitre = models.ForeignKey(Chapitre, on_delete=models.CASCADE, blank=True, null=True)
 
     def __str__(self):
         return self.titre
