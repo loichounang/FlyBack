@@ -1,4 +1,5 @@
 from django.db import models
+from utilisateurs.models import Utilisateur
 
 class Catégorie(models.Model):
     libellé = models.CharField(max_length=255)
@@ -10,7 +11,13 @@ class Catégorie(models.Model):
 class Cours(models.Model):
     titre = models.CharField(max_length=255)
     description = models.TextField()
-    auteur = models.ForeignKey('utilisateurs.Administrateur', on_delete=models.CASCADE)
+    auteur = models.ForeignKey(
+        Utilisateur,
+        on_delete=models.CASCADE,
+        limit_choices_to={'role': 'administrateur'},
+        related_name='cours'
+    )
+    image = models.ImageField(upload_to='cours/images/', null=True, blank=True)
     fichier = models.FileField(upload_to='cours/fichiers/', null=True, blank=True)
     objectifs = models.TextField()
     durée = models.CharField(max_length=50)

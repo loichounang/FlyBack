@@ -3,12 +3,13 @@
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.db import models
 
+
 class UtilisateurManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):
         if not email:
-            raise ValueError('L\'adresse email est obligatoire')
+            raise ValueError("L'adresse email est obligatoire")
         if not password:
-            raise ValueError('Le mot de passe est obligatoire')
+            raise ValueError("Le mot de passe est obligatoire")
         email = self.normalize_email(email)
         user = self.model(email=email, **extra_fields)
         user.set_password(password)
@@ -20,16 +21,25 @@ class UtilisateurManager(BaseUserManager):
         extra_fields.setdefault('is_superuser', True)
         return self.create_user(email, password, **extra_fields)
 
+
 class Utilisateur(AbstractBaseUser, PermissionsMixin):
+    ROLE_CHOICES = (
+        ('administrateur', 'Administrateur'),
+        ('ambassadeur', 'Ambassadeur'),
+        ('utilisateur', 'Utilisateur')
+    )
+
     email = models.EmailField(unique=True)
     nom = models.CharField(max_length=255)
-    username = models.CharField(max_length=255, blank=True, null=True)
     prénom = models.CharField(max_length=255)
+    username = models.CharField(max_length=255, blank=True, null=True)
+    role = models.CharField(max_length=20, choices=ROLE_CHOICES, default='utilisateur')
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     dernier_accès = models.DateTimeField(null=True, blank=True)
     statut = models.CharField(max_length=50, default='actif')
+    date_joined = models.DateField(auto_now_add=True, blank=True, null=True)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['nom', 'prénom']
@@ -40,26 +50,13 @@ class Utilisateur(AbstractBaseUser, PermissionsMixin):
         return f'{self.nom} {self.prénom}'
 
     def has_perm(self, perm, obj=None):
-        return self.is_superuser
+        # Permissions spécifiques selon le rôle
+        if self.role == 'administrateur':
+            return True
+        return super().has_perm(perm, obj)
 
     def has_module_perms(self, app_label):
-        return self.is_superuser
-
-class Administrateur(Utilisateur):
-    class Meta:
-        verbose_name = "Administrateur"
-        verbose_name_plural = "Administrateurs"
-
-    def save(self, *args, **kwargs):
-        # Assurez-vous que is_staff et is_superuser sont True pour les Administrateurs
-        self.is_staff = True
-        self.is_superuser = True
-        super().save(*args, **kwargs)
-
-class Ambassadeur(Utilisateur):
-    équipe = models.ForeignKey('equipes.Equipe', on_delete=models.SET_NULL, null=True, blank=True)
-    date_inscription = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        verbose_name = "Ambassadeur"
-        verbose_name_plural = "Ambassadeurs"
+        # Permet l'accès aux modules pour les administrateurs
+        if self.role == 'administrateur':
+            return True
+        return super().has_module_perms(app_label)

@@ -1,9 +1,15 @@
 from django.db import models
+from utilisateurs.models import Utilisateur
 
 class SujetForum(models.Model):
     titre = models.CharField(max_length=255)
     description = models.TextField()
-    auteur = models.ForeignKey('utilisateurs.Ambassadeur', on_delete=models.CASCADE)
+    auteur = models.ForeignKey(
+        Utilisateur, 
+        on_delete=models.CASCADE,
+        limit_choices_to={'role': 'administrateur'},
+        related_name='forum'
+    )
     date_publication = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -11,7 +17,11 @@ class SujetForum(models.Model):
 
 class MessageForum(models.Model):
     contenu = models.TextField()
-    auteur = models.ForeignKey('utilisateurs.Ambassadeur', on_delete=models.CASCADE)
+    auteur = models.ForeignKey(
+        Utilisateur,
+        on_delete=models.CASCADE,
+        limit_choices_to={'role': 'administrateur, team_leader'}
+    )
     sujet = models.ForeignKey(SujetForum, on_delete=models.CASCADE)
     date_publication = models.DateTimeField(auto_now_add=True)
 
