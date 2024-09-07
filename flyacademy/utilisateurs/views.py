@@ -32,6 +32,13 @@ class UtilisateurViewSet(viewsets.ModelViewSet):
         utilisateur.is_active = False
         utilisateur.save()
         return Response({'status': 'Utilisateur désactivé'}, status=status.HTTP_200_OK)
+    
+    @action(detail=True, methods=['get'])
+    def get_admins(self, request, pk=None):
+        """ Filter les administrateurs """
+        queryset = self.queryset.filter(role='administrateur')
+        serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data)
 
     @action(detail=True, methods=['post'], permission_classes=[IsAdminUser])
     def réactiver(self, request, pk=None):
@@ -61,29 +68,34 @@ class UtilisateurViewSet(viewsets.ModelViewSet):
 
 
 class CustomAuthToken(ObtainAuthToken):
-    serializer_class = LoginSerializer
+    serializer_class = LoginSerializer  # Utilise le serializer mis à jour
 
     def post(self, request, *args, **kwargs):
         serializer = self.serializer_class(data=request.data, context={'request': request})
         serializer.is_valid(raise_exception=True)
-        user = serializer.validated_data['user']
-        token, created = Token.objects.get_or_create(user=user)
-        user.last_login = timezone.now()
+        user = serializer.validated_data['user']  # Récupère l'utilisateur depuis les données validées
+        user.statut = 'actif'
+        user.dernier_accès = timezone.now()
         user.save()
-        return Response({
+        token, created = Token.objects.get_or_create(user=user)
+        return Response({"message": "Bienvenue dans votre espace personnel " + user.role,
             'token': token.key,
-            'user_id': user.id,
+            'user_id': user.pk,
             'email': user.email,
             'role': user.role,
-        })
+            'status': user.statut,
+        }, status=status.HTTP_200_OK)
 
 class LogoutView(APIView):
+    authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
     def post(self, request):
         request.user.auth_token.delete()
+        request.user.statut = "inactif"
+        request.user.save()
         logout(request)
-        return Response(status=status.HTTP_200_OK)
+        return Response({"message": "Logout succeeded"}, status=status.HTTP_200_OK)
 
 class SessionManagement(APIView):
     authentication_classes = [TokenAuthentication]

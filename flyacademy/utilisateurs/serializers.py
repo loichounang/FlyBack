@@ -2,6 +2,7 @@
 
 from rest_framework import serializers
 from .models import Utilisateur
+from django.contrib.auth import authenticate
 from equipes.models import Equipe
 
 
@@ -10,7 +11,7 @@ class UtilisateurSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Utilisateur
-        fields = ['email', 'nom', 'prénom', 'password', 'dernier_accès', 'statut', 'username', 'role']
+        fields = ['id', 'email', 'nom', 'prénom', 'password', 'dernier_accès', 'statut', 'username', 'role']
 
     def create(self, validated_data):
         # Extrait et supprime le mot de passe du dictionnaire des données validées
@@ -69,3 +70,12 @@ class LoginSerializer(serializers.Serializer):
 
     class Meta:
         fields = ['email', 'password']
+
+    def validate(self, data):
+        email = data.get('email')
+        password = data.get('password')
+        user = authenticate(username=email, password=password)
+        if not user:
+            raise serializers.ValidationError("Invalid login credentials.")
+        data['user'] = user  # Ajoute l'utilisateur authentifié aux données validées
+        return data

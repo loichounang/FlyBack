@@ -6,6 +6,7 @@ class Message(models.Model):
     destinataire = models.ForeignKey(Utilisateur, related_name='destinataire', on_delete=models.CASCADE)
     contenu = models.TextField()
     date_envoi = models.DateTimeField(auto_now_add=True)
+    read_or_not = models.BooleanField(default=False)
 
     def __str__(self):
         return f'Message de {self.expéditeur} à {self.destinataire}'

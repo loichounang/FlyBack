@@ -20,7 +20,6 @@ class MessageForum(models.Model):
     auteur = models.ForeignKey(
         Utilisateur,
         on_delete=models.CASCADE,
-        limit_choices_to={'role': 'administrateur, team_leader'}
     )
     sujet = models.ForeignKey(SujetForum, on_delete=models.CASCADE)
     date_publication = models.DateTimeField(auto_now_add=True)

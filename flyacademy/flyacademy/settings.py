@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'corsheaders',
+    'rest_framework.authtoken',
     'rest_framework',
     'drf_yasg',
     'django_filters',
@@ -45,11 +46,12 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'cours',
+    'cours.apps.CoursConfig',
     'equipes',
+    'media',
     'forum',
     'messagerie',
-    'progressions',
+    'progressions.apps.ProgressionsConfig',
     'utilisateurs',
 ]
 

@@ -6,7 +6,12 @@ from .models import Catégorie, Cours, Chapitre, Leçon, Quizz
 class CatégorieSerializer(serializers.ModelSerializer):
     class Meta:
         model = Catégorie
-        fields = ['id', 'libellé', 'description']
+        fields = ['id', 'name', 'description']
+
+class CatégorieListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Catégorie
+        fields = ['id', 'name', 'description', 'value']
 
 class CoursSerializer(serializers.ModelSerializer):
     class Meta:

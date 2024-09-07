@@ -26,7 +26,8 @@ class Utilisateur(AbstractBaseUser, PermissionsMixin):
     ROLE_CHOICES = (
         ('administrateur', 'Administrateur'),
         ('ambassadeur', 'Ambassadeur'),
-        ('utilisateur', 'Utilisateur')
+        ('utilisateur', 'Utilisateur'),
+        ('team_leader', "Leader"),
     )
 
     email = models.EmailField(unique=True)

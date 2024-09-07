@@ -2,7 +2,7 @@
 
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import CatégorieViewSet, CoursViewSet, ChapitreViewSet, LeçonViewSet, QuizzViewSet
+from .views import CatégorieViewSet, CoursViewSet, ChapitreViewSet, LeçonViewSet, QuizzViewSet, ListCategoriesWithInfos
 
 router = DefaultRouter()
 router.register(r'categories', CatégorieViewSet)
@@ -13,4 +13,5 @@ router.register(r'quizz', QuizzViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('catégories/list-all', ListCategoriesWithInfos.as_view(), name='categories-without-value')
 ]
