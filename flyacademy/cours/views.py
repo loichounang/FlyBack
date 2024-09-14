@@ -1,12 +1,39 @@
 # cours/views.py
 
+from rest_framework.permissions import IsAuthenticated
 from rest_framework import viewsets, status
-from rest_framework.decorators import action
+from rest_framework.decorators import action, api_view
 from rest_framework import generics
 from django.db.models import Count
 from rest_framework.response import Response
-from .models import Catégorie, Cours, Chapitre, Leçon, Quizz, CoursUtilisateur
-from .serializers import CatégorieSerializer, CoursSerializer, ChapitreSerializer, LeçonSerializer, QuizzSerializer, CatégorieListSerializer
+from .models import Catégorie, Cours, Chapitre, Leçon, Quizz, CoursUtilisateur, Rating
+from .serializers import CatégorieSerializer, CoursSerializer, ChapitreSerializer, LeçonSerializer, QuizzSerializer, CatégorieListSerializer, RatingSerializer
+
+class RatingViewSet(viewsets.ViewSet):
+    permission_classes = [IsAuthenticated]
+
+    def create(self, request, *args, **kwargs):
+        cours_id = request.data.get('cours_id')
+        score = request.data.get('score')
+
+        if not cours_id or not score:
+            return Response({'error': 'cours_id and score are required'}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            cours = Cours.objects.get(id=cours_id)
+        except Cours.DoesNotExist:
+            return Response({'error': 'Cours not found'}, status=status.HTTP_404_NOT_FOUND)
+
+        rating, created = Rating.objects.get_or_create(user=request.user, cours=cours, defaults={'score': score})
+
+        if not created:
+            rating.score = score
+            rating.save()
+
+        # Update the course rating
+        cours.update_rating()
+
+        return Response({'message': 'Rating submitted successfully'}, status=status.HTTP_201_CREATED)
 
 class CatégorieViewSet(viewsets.ModelViewSet):
     queryset = Catégorie.objects.all()
@@ -77,6 +104,16 @@ class CoursViewSet(viewsets.ModelViewSet):
 class ChapitreViewSet(viewsets.ModelViewSet):
     queryset = Chapitre.objects.all()
     serializer_class = ChapitreSerializer
+
+    def retrieve(self, request, *args, **kwargs):
+        chapitre = self.get_object()
+        leçons = Leçon.objects.filter(chapitre=chapitre)
+        leçon_serializer = LeçonSerializer(leçons, many=True)
+        data = {
+            'chapitre': ChapitreSerializer(chapitre).data,
+            'leçons': leçon_serializer.data
+        }
+        return Response(data)
 
 class LeçonViewSet(viewsets.ModelViewSet):
     queryset = Leçon.objects.all()
