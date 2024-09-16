@@ -21,17 +21,43 @@ class CatégorieListSerializer(serializers.ModelSerializer):
 class CoursSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cours
-        fields = ['id', 'titre', 'description', 'auteur', 'fichier', 'objectifs', 'durée', 'lien_video', 'catégorie', 'fichier', 'cours_image']
+        fields = [
+            'id', 'titre', 'description', 'auteur', 'fichier',
+            'objectifs', 'duree', 'lien_video', 'categorie',
+            'image'
+        ]
 
 class ChapitreSerializer(serializers.ModelSerializer):
     class Meta:
         model = Chapitre
-        fields = ['id', 'titre', 'cours']
+        fields = ['id', 'titre', 'cours', 'duree']
 
 class LeçonSerializer(serializers.ModelSerializer):
     class Meta:
         model = Leçon
-        fields = ['id', 'titre', 'description', 'image', 'lien_video', 'fichier_détails', 'chapitre']
+        fields = '__all__'
+    
+    def create(self, validated_data):
+        # Personnalisez la méthode create si nécessaire
+        # Assurez-vous de traiter les fichiers et autres champs correctement
+
+        # Créez une nouvelle instance de Leçon
+        instance = Leçon.objects.create(**validated_data)
+
+        # Vous pouvez ajouter des opérations supplémentaires si nécessaire
+
+        return instance
+
+    def to_representation(self, instance):
+        # Personnalisez la représentation si nécessaire, par exemple, pour les durées
+        representation = super().to_representation(instance)
+        
+        # Ajoutez des traitements spécifiques si vous avez des champs comme 'duree' que vous devez manipuler
+        if 'duree' in representation:
+            # Exemple de formatage pour le champ 'duree'
+            representation['duree'] = str(instance.duree)  # Ajustez selon le format de votre champ de durée
+        
+        return representation
 
 class QuizzSerializer(serializers.ModelSerializer):
     class Meta:

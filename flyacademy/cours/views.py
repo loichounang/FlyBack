@@ -1,6 +1,7 @@
 # cours/views.py
 
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.parsers import MultiPartParser
 from rest_framework import viewsets, status
 from rest_framework.decorators import action, api_view
 from rest_framework import generics
@@ -46,6 +47,7 @@ class ListCategoriesWithInfos(generics.ListAPIView):
 class CoursViewSet(viewsets.ModelViewSet):
     queryset = Cours.objects.all()
     serializer_class = CoursSerializer
+    parser_classes = [MultiPartParser]  # Ajout pour la gestion des fichiers multipart
 
     # Action pour récupérer tous les cours commencés, indépendamment de l'utilisateur
     @action(detail=False, methods=['get'], url_path='tous-les-cours-commences')
@@ -114,10 +116,25 @@ class ChapitreViewSet(viewsets.ModelViewSet):
             'leçons': leçon_serializer.data
         }
         return Response(data)
+    
+class ListChaptersByCourseIdView(generics.ListAPIView):
+    serializer_class = ChapitreSerializer
+
+    def get_queryset(self):
+        cours_id = self.request.query_params.get('coursId')
+        if cours_id:
+            return Chapitre.objects.filter(cours_id=cours_id)
+        return Chapitre.objects.none()
+
+    def get(self, request, *args, **kwargs):
+        queryset = self.get_queryset()
+        serializer = self.get_serializer(queryset, many=True)
+        return Response({'chapitres': serializer.data})
 
 class LeçonViewSet(viewsets.ModelViewSet):
     queryset = Leçon.objects.all()
     serializer_class = LeçonSerializer
+    parser_classes = [MultiPartParser]  # Ajout pour la gestion des fichiers multipart
 
 class QuizzViewSet(viewsets.ModelViewSet):
     queryset = Quizz.objects.all()
