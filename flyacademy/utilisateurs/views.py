@@ -110,3 +110,11 @@ class SessionManagement(APIView):
             return Response({"detail": "Session expired. You have been logged out."},
                             status=status.HTTP_401_UNAUTHORIZED)
         return Response({"detail": "Session is active."})
+
+
+class RoleViewSet(viewsets.ViewSet):
+
+    @action(detail=False, methods=['get'])
+    def list_roles(self, request):
+        roles = dict(Utilisateur.ROLE_CHOICES)  # Convertit les choix en un dictionnaire
+        return Response(roles)
