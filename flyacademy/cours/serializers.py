@@ -1,7 +1,7 @@
 # cours/serializers.py
 
 from rest_framework import serializers
-from .models import Catégorie, Cours, Chapitre, Leçon, Quizz, Rating
+from .models import Catégorie, Cours, Chapitre, Leçon, Quizz, Rating, CoursUtilisateur, ProgressionLeçon
 
 class RatingSerializer(serializers.ModelSerializer):
     class Meta:
@@ -24,7 +24,7 @@ class CoursSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'titre', 'description', 'auteur', 'fichier',
             'objectifs', 'duree', 'lien_video', 'categorie',
-            'image'
+            'image', "average_rating", "rating_count"
         ]
 
 class ChapitreSerializer(serializers.ModelSerializer):
@@ -63,3 +63,13 @@ class QuizzSerializer(serializers.ModelSerializer):
     class Meta:
         model = Quizz
         fields = ['id', 'question', 'chapitre']
+
+class CoursUtilisateursSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CoursUtilisateur
+        fields = '__all__'
+
+class ProgressionLeçonSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProgressionLeçon
+        fields = '__all__'

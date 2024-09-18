@@ -1,6 +1,6 @@
 # utilisateurs/views.py
 
-from rest_framework import viewsets, status
+from rest_framework import viewsets, status, generics
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.response import Response
@@ -8,14 +8,42 @@ from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.views import APIView
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.filters import SearchFilter, OrderingFilter
-from django_filters.rest_framework import DjangoFilterBackend
+from django_filters.rest_framework import DjangoFilterBackend # type: ignore
+from rest_framework_simplejwt.views import TokenObtainPairView # type: ignore
 from .models import Utilisateur
-from .serializers import UtilisateurSerializer, LoginSerializer
+from .serializers import UtilisateurSerializer, LoginSerializer, CustomTokenObtainPairSerializer
 from rest_framework.exceptions import ValidationError
 from rest_framework.authtoken.models import Token
 from django.contrib.auth import logout
 from django.utils import timezone
 from django.conf import settings
+from rest_framework_simplejwt.tokens import RefreshToken # type: ignore
+
+class CustomTokenObtainPairView(TokenObtainPairView):
+    serializer_class = CustomTokenObtainPairSerializer
+
+    def post(self, request, *args, **kwargs):
+        response = super().post(request, *args, **kwargs)
+        data = response.data
+        token = data.get('access')
+
+        # Récupérer l'utilisateur associé au token
+        try:
+            user = Utilisateur.objects.get(auth_token=token)
+            user_data = UtilisateurSerializer(user).data
+            data.update(user_data)
+        except Utilisateur.DoesNotExist:
+            pass
+
+        return Response(data, status=status.HTTP_200_OK)
+    
+class UserDetailView(generics.RetrieveAPIView):
+    serializer_class = UtilisateurSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_object(self):
+        user = self.request.user
+        return Utilisateur.objects.get(id=user.id)
 
 class UtilisateurViewSet(viewsets.ModelViewSet):
     queryset = Utilisateur.objects.all()
@@ -87,15 +115,24 @@ class CustomAuthToken(ObtainAuthToken):
         }, status=status.HTTP_200_OK)
 
 class LogoutView(APIView):
-    authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
     def post(self, request):
-        request.user.auth_token.delete()
-        request.user.statut = "inactif"
-        request.user.save()
-        logout(request)
-        return Response({"message": "Logout succeeded"}, status=status.HTTP_200_OK)
+        try:
+            # Obtenir le refresh token depuis la requête
+            refresh_token = request.data.get("refresh_token")
+            token = RefreshToken(refresh_token)
+            
+            # Mettre le token sur liste noire
+            token.blacklist()
+
+            # Optionnel: Changer le statut de l'utilisateur
+            request.user.statut = "inactif"
+            request.user.save()
+
+            return Response({"message": "Logout succeeded"}, status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
 class SessionManagement(APIView):
     authentication_classes = [TokenAuthentication]

@@ -26,7 +26,6 @@ class Utilisateur(AbstractBaseUser, PermissionsMixin):
     ROLE_CHOICES = (
         ('administrateur', 'Administrateur'),
         ('ambassadeur', 'Ambassadeur'),
-        ('utilisateur', 'Utilisateur'),
         ('team_leader', "Leader"),
     )
 
@@ -34,7 +33,7 @@ class Utilisateur(AbstractBaseUser, PermissionsMixin):
     nom = models.CharField(max_length=255)
     prénom = models.CharField(max_length=255)
     username = models.CharField(max_length=255, blank=True, null=True)
-    role = models.CharField(max_length=20, choices=ROLE_CHOICES, default='utilisateur')
+    role = models.CharField(max_length=20, choices=ROLE_CHOICES, default='ambassadeur')
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)

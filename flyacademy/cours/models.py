@@ -2,6 +2,7 @@ from django.db import models
 from utilisateurs.models import Utilisateur
 from django.conf import settings
 from datetime import timedelta
+from django.utils.translation import gettext_lazy as _
 
 class Rating(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -79,12 +80,37 @@ class Cours(models.Model):
 
 class CoursUtilisateur(models.Model):
     utilisateur = models.ForeignKey('utilisateurs.Utilisateur', on_delete=models.CASCADE)
-    cours = models.ForeignKey(Cours, on_delete=models.CASCADE)
+    cours = models.ForeignKey('Cours', on_delete=models.CASCADE)
     date_début = models.DateTimeField(auto_now_add=True)
-    statut = models.CharField(max_length=25, choices=Cours.STATUS_CHOICES, default='active')
+    statut = models.CharField(
+        max_length=25,
+        choices=[
+            ('active', 'Actif'),
+            ('completed', 'Terminé'),
+            ('dropped', 'Abandonné'),
+        ],
+        default='active'
+    )
 
     def __str__(self):
         return f"{self.utilisateur} - {self.cours} ({self.statut})"
+    
+class ProgressionLeçon(models.Model):
+    cours_utilisateur = models.ForeignKey(CoursUtilisateur, on_delete=models.CASCADE, related_name='progressions')
+    leçon = models.ForeignKey('Leçon', on_delete=models.CASCADE)
+    statut_leçon = models.CharField(
+        max_length=20,
+        choices=[
+            ('not_started', 'Non commencée'),
+            ('in_progress', 'En cours'),
+            ('completed', 'Terminée'),
+        ],
+        default='not_started'
+    )
+    date_terminée = models.DateTimeField(null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.cours_utilisateur.utilisateur} - {self.leçon} ({self.statut_leçon})"
     
 class Chapitre(models.Model):
     titre = models.CharField(max_length=255)

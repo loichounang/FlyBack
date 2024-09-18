@@ -6,12 +6,14 @@ from rest_framework import viewsets, status
 from rest_framework.decorators import action, api_view
 from rest_framework import generics
 from django.db.models import Count
+from datetime import timezone
 from rest_framework.response import Response
-from .models import Catégorie, Cours, Chapitre, Leçon, Quizz, CoursUtilisateur, Rating
-from .serializers import CatégorieSerializer, CoursSerializer, ChapitreSerializer, LeçonSerializer, QuizzSerializer, CatégorieListSerializer, RatingSerializer
+from .models import Catégorie, Cours, Chapitre, Leçon, Quizz, CoursUtilisateur, Rating, ProgressionLeçon
+from .serializers import CatégorieSerializer, CoursSerializer, ChapitreSerializer, LeçonSerializer, QuizzSerializer, CatégorieListSerializer, RatingSerializer, ProgressionLeçonSerializer, CoursUtilisateursSerializer
 
 class RatingViewSet(viewsets.ViewSet):
     permission_classes = [IsAuthenticated]
+    serializer_class = RatingSerializer
 
     def create(self, request, *args, **kwargs):
         cours_id = request.data.get('cours_id')
@@ -139,3 +141,66 @@ class LeçonViewSet(viewsets.ModelViewSet):
 class QuizzViewSet(viewsets.ModelViewSet):
     queryset = Quizz.objects.all()
     serializer_class = QuizzSerializer
+
+# Permettre à un utilisateur de s'enregistrer à un cours et suivre son évolution
+class CoursUtilisateurViewSet(viewsets.ModelViewSet):
+    queryset = CoursUtilisateur.objects.all()
+    serializer_class = CoursUtilisateursSerializer
+    permission_classes = [IsAuthenticated]
+
+    def create(self, request, *args, **kwargs):
+        utilisateur = request.user
+        cours_id = request.data.get('cours_id')
+
+        try:
+            cours = Cours.objects.get(id=cours_id)
+        except Cours.DoesNotExist:
+            return Response({"detail": "Cours non trouvé."}, status=status.HTTP_404_NOT_FOUND)
+
+        # Vérifier si l'utilisateur est déjà inscrit à ce cours
+        cours_utilisateur, created = CoursUtilisateur.objects.get_or_create(utilisateur=utilisateur, cours=cours)
+
+        if not created:
+            return Response({"detail": "Vous êtes déjà inscrit à ce cours."}, status=status.HTTP_400_BAD_REQUEST)
+
+        serializer = self.get_serializer(cours_utilisateur)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    
+
+# Gestion de la progression dans le suivi d'un cours
+class ProgressionLeçonViewSet(viewsets.ModelViewSet):
+    queryset = ProgressionLeçon.objects.all()
+    serializer_class = ProgressionLeçonSerializer
+    permission_classes = [IsAuthenticated]
+
+    def update(self, request, *args, **kwargs):
+        progression = self.get_object()
+        statut_leçon = request.data.get('statut_leçon')
+
+        if statut_leçon not in ['not_started', 'in_progress', 'completed']:
+            return Response({"detail": "Statut de leçon invalide."}, status=status.HTTP_400_BAD_REQUEST)
+
+        progression.statut_leçon = statut_leçon
+
+        # Si la leçon est complétée, enregistrer la date de fin
+        if statut_leçon == 'completed':
+            progression.date_terminée = timezone.now()
+
+        progression.save()
+
+        serializer = self.get_serializer(progression)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    
+# Lister les cours par catégorie
+class CoursByCategoryViewSet(viewsets.ViewSet):
+    def list(self, request):
+        category_id = request.query_params.get('category_id')
+        if category_id is None:
+            return Response({'detail': 'category_id parameter is required'}, status=status.HTTP_400_BAD_REQUEST)
+        
+        try:
+            courses = Cours.objects.filter(categorie_id=category_id)
+            serializer = CoursSerializer(courses, many=True)
+            return Response(serializer.data)
+        except Cours.DoesNotExist:
+            return Response({'detail': 'Courses not found'}, status=status.HTTP_404_NOT_FOUND)

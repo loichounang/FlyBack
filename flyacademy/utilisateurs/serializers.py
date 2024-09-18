@@ -4,10 +4,24 @@ from rest_framework import serializers
 from .models import Utilisateur
 from django.contrib.auth import authenticate
 from equipes.models import Equipe
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer # type: ignore
 
+
+class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
+    @classmethod
+    def get_token(cls, user):
+        token = super().get_token(user)
+
+        # Ajouter des informations supplémentaires au payload du token
+        token['user_id'] = user.id
+        token['email'] = user.email
+        token['role'] = user.role
+        # Ajoute d'autres informations nécessaires
+
+        return token
 
 class UtilisateurSerializer(serializers.ModelSerializer):
-    password = serializers.CharField(write_only=True, required=True)
+    password = serializers.CharField(write_only=False, required=True)
 
     class Meta:
         model = Utilisateur
